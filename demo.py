@@ -116,7 +116,7 @@ def main():
     prot_list=prot_str.split(',')
     bcolor = st.sidebar.color_picker('Pick A Color', '#00f900')
     protein=st.sidebar.selectbox('select protein',prot_list)
-    style = st.sidebar.selectbox('style', ['line', 'cross', 'stick', 'sphere', 'cartoon', 'clicksphere'])
+    style = st.sidebar.selectbox('style', ['cartoon', 'cross', 'stick', 'sphere', 'line', 'clicksphere'])
     residues = pocket_detection(protein)
     xyzview = py3Dmol.view(query='pdb:'+protein)
     xyzview.setStyle({style:{'color':'spectrum'}})
