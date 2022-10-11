@@ -112,7 +112,7 @@ def generate_ligands():
 
 def main():
     st.sidebar.title('AlloKey.ai')
-    prot_str='1BML,1D5M,1D5X,1D5Z,1D6E,1DEE,1E9F,1FC2,1FCC,1G4U,1GZS,1HE1,1HEZ,1HQR,1HXY,1IBX,1JBU,1JWM,4JSV'
+    prot_str='1D5X,1D5Z,1D6E,1DEE,1E9F,1FC2,1FCC,1G4U,1GZS,1HE1,1HEZ,1HQR,1HXY,1IBX,1JBU,1JWM,4JSV'
     prot_list=prot_str.split(',')
     bcolor = st.sidebar.color_picker('Pick A Color', '#00f900')
     protein=st.sidebar.selectbox('select protein',prot_list)
