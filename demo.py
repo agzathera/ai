@@ -23,7 +23,7 @@ def pocket_detection(protein):
     data = {"pdb": protein, "chain": "A"}
     results = requests.post(url, data=data)
     pocket_residues = results.json()["1"]["residues"].split(" ")[4:]
-    print(results)
+    print(results.json())
     pocket_residues = [eval(i) for i in pocket_residues]
     return pocket_residues
 
