@@ -55,7 +55,7 @@ def generate_ligands():
     """)
 
     # Copy the dataset so any changes are not applied to the original cached version
-    df = pd.read_csv("./pages/SMILES1.csv")
+    df = pd.read_csv("./SMILES1.csv")
 
     # Sidebar panel
     st.sidebar.header('Set parameters')
