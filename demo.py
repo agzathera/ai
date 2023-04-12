@@ -110,7 +110,8 @@ def main():
     bcolor = st.sidebar.color_picker('Pick A Color', '#00f900')
     protein=st.sidebar.selectbox('select protein',prot_list)
     style = st.sidebar.selectbox('style', ['cartoon', 'line', 'cross', 'stick', 'sphere', 'clicksphere'])
-    residues = pocket_detection(protein)
+#     residues = pocket_detection(protein)
+    residues = [70, 72, 84, 85, 117, 118, 119, 121, 122, 123, 130, 199, 200, 287, 288, 290, 330, 331, 334, 335, 440, 444]
     xyzview = py3Dmol.view(query='pdb:'+protein)
     xyzview.setStyle({style:{'color':'spectrum'}})
     xyzview.addStyle({'within': {'distance': 3, 'sel': {'chain': "A", 'resi': residues}}}, {'sphere': {'color': 'red'}})
