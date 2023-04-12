@@ -12,7 +12,7 @@ import requests
 @st.cache(allow_output_mutation=True)
 def download_dataset():
     """Loads once then cached for subsequent runs"""
-    df = pd.read_csv("SMILES1.csv ")
+    df = pd.read_csv("1eea_smiles.csv ")
     return df
 
 url = 'https://passer.smu.edu/api'
@@ -96,16 +96,16 @@ def generate_ligands():
 
     raw_html = mols2grid.display(df_result4,
                                  # subset=["Name", "img"],
-                                 subset=["img", "affinity"],
-                                 mapping={"smiles": "SMILES", "MW": "MW", "LogP": "LogP", "NumHDonors": "NumHDonors", "NumHAcceptors": "NumHAcceptors", "affinity": "affinity"},
-                                 tooltip = ["MW", "LogP", "NumHDonors", "NumHAcceptors", "affinity", "SMILES"])._repr_html_()
+                                 subset=["img"],
+                                 mapping={"smiles": "SMILES", "MW": "MW", "LogP": "LogP", "NumHDonors": "NumHDonors", "NumHAcceptors": "NumHAcceptors"},
+                                 tooltip = ["MW", "LogP", "NumHDonors", "NumHAcceptors", "SMILES"])._repr_html_()
 
     components.html(raw_html, width=900, height=1100, scrolling=True)
 
 
 def main():
     st.sidebar.title('AlloKey.ai')
-    prot_str="3AHR"
+    prot_str="1EEA"
     prot_list=prot_str.split(',')
     bcolor = st.sidebar.color_picker('Pick A Color', '#00f900')
     protein=st.sidebar.selectbox('select protein',prot_list)
